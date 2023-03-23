@@ -17,9 +17,3 @@
 - HTML
 - django
 
-
-## Youtube Video
-presenting :
-- The problem statement
-- The Base Model(SVM) and Deeplearning Model(AlexNet)
-- The Flask Webpage Demo
