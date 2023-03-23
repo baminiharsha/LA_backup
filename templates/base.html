@@ -4,34 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <title> LeafDoctor </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            background-color:white;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+         .header img {
+            margin-left: 240px;
+        }
+        li {
+            border-bottom: 1px solid #555;
+            display: inline;
+         }
+         a{
+            text-decoration: none;
+        }
+h5{
+    font-size:xx-large;
+}
+input{
+    font-size:x-large;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+*{
+   font-family: 'Nunito', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: all .2s linear;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body{
+   background: #eee;
+}
+li{
+   font-size: medium;
+}
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  font-size:x-large;
+  width:300px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.container{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:3rem 2rem;
+}
+.container .title{
+   font-size: 3.5rem;
+   color:#444;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:2rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   background: #fff;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid #ccc;
+   outline-offset: -1.5rem;
+   cursor: pointer;
+}
+
+.container .products-container .product:hover{
+   outline: .2rem solid #222;
+   outline-offset: 0;
+}
+
+.container .products-container .product img{
+   height: 25rem;
+}
+
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:#444;
+}
+
+.container .products-container .product:hover h3{
+   color:#27ae60;
+}
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:#444;
+}
+
+.products-preview{
+   position: fixed;
+   top:0; left:0;
+   min-height: 100vh;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.products-preview .preview{
+   display: none;
+   padding:2rem;
+   text-align: center;
+   background: #fff;
+   position: relative;
+   margin:2rem;
+   width: 40rem;
+   overflow: scroll;
+   scrollbar-width: thin;
+}
+.products-preview .preview.active{
+   display: inline-block;
+   overflow-x:hidden;
+   overflow-y:auto;
+}
+
+.products-preview .preview img{
+   height: 30rem;
+}
+
+.products-preview .preview .fa-times{
+   position: absolute;
+   top:1rem; right:1.5rem;
+   cursor: pointer;
+   color:#444;
+   font-size: 4rem;
+}
+
+.products-preview .preview .fa-times:hover{
+   transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+   color:#444;
+   padding:.5rem 0;
+   font-size: 2.5rem;
+}
+
+.products-preview .preview p{
+   line-height: 1.5;
+   padding:1rem 0;
+   font-size: 1.6rem;
+   color:#777;
+   overflow: auto;
+}
+.scrollable-text {
+   max-height: 200px;
+   overflow-y: scroll;
+ }
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   .products-preview .preview img{
+      height: 25rem;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+}
+    </style>
+    <title> LeafAssist </title>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="{{url_for('static',filename='image/logo_leaf.png')}}" alt="" width="150" height="100">
-             LeafDoctor</a>
-       
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          
-        </div>
-    </nav>
+    <div class= "header" style="background-color:#e5e5e5;padding:15px;text-align:center;">
+        <img src="static/image/logo.png" alt="Image description" style="width: 150px;height:auto">
+        <h1 style="font-size: 50px;font-family: Open San;font-stretch: narrower;color:black;text-align: center;">WELCOME TO LEAF ASSIST</h1>
     </div>
     <div class="container">
         <br/>
-    
-        <h1> Welcome to LeafDoctor </h1>
             <br/>
-            <p>
+            <h2 style="text-align:center;font-weight: bolder;font-size:xx-large;">
             You can Upload your Picture in this platform and we will let you know if your plant is Healthy or Not
-            </p>
+            </h2>
             <br>
             <form action="#" method="POST" enctype="multipart/form-data">
-                <label for="upload"> Upload to predict </label>
+                <label for="upload"><h2 style="font-size:x-large;"> Upload to predict     </h2> </label>
                 <input type="file" name="image" required="true">
-                <input type="submit" value="Upload and Diagnose">
+                <button type="submit" value="Upload and Diagnose">Upload and Diagnose</button>
             </form>
         
     {% if fileupload %}  
@@ -61,6 +255,248 @@
     {% endif %}
 
     </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <h4 style="text-align:center;"><b>Please Scroll down to find Precautions for some crop leaves</b></h4>
+    <div class="container">
 
-</body>
+        <h3 class="title"> Precautions </h3>
+     
+        <div class="products-container">
+           <div class="product" data-name="p-1">
+              <img src="static/image/Pepper-Bell-Healthy.JPG" alt="">
+              <h3>Pepper-Bell-Healthy</h3>
+           </div>
+           <div class="product" data-name="p-2">
+              <img src="static/image/Pepper-Bell_Bacterial_Spot.JPG" alt="">
+              <h3>Pepper-Bell_Bacterial_Spot</h3>
+           </div>
+     
+           <div class="product" data-name="p-3">
+              <img src="static/image/Potato-Early-Blight.jpg" alt="">
+              <h3>Potato-Early-Blight</h3>
+           </div>
+     
+           <div class="product" data-name="p-4">
+              <img src="static/image/Potato-Healthy.JPG" alt="">
+              <h3>Potato-Healthy</h3>
+           </div>
+     
+           <div class="product" data-name="p-5">
+              <img src="static/image/Potato-Late-Blight.JPG" alt="">
+              <h3>Potato-Late-Blight</h3>
+           </div>
+     
+           <div class="product" data-name="p-6">
+              <img src="static/image/Toamto-Healthy.JPG" alt="">
+              <h3>Tomato-Healthy</h3>
+           </div>
+           <div class="product" data-name="p-7">
+              <img src="static/image/Tomato-Bacterial-Spot.JPG" alt="">
+              <h3>Tomato-Bacterial-Spot</h3>
+           </div>
+           <div class="product" data-name="p-8">
+              <img src="static/image/Tomato-Early-Blight.JPG" alt="">
+              <h3>Tomato-Early-Blight</h3>
+           </div>
+           <div class="product" data-name="p-9">
+              <img src="static/image/Tomato-Late-Blight.JPG" alt="">
+              <h3>Tomato-Late-Blight</h3>
+           </div>
+           <div class="product" data-name="p-0">
+              <img src="static/image/Tomato-Leaf-Mold.JPG" alt="">
+              <h3>Tomato-Leaf-Mold</h3>
+           </div>
+     
+        </div>
+     
+     </div>
+     
+     <div class="products-preview">
+        <div class="preview" data-target="p-1">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Pepper-Bell-Healthy.JPG" alt="">
+           <h3>Pepper-Bell-Healthy</h3> 
+           <div class="scrollable-text">
+           <p style="font-size: medium;"><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Soil preparation:</b> Bell peppers grow best in well-drained soil that is rich in organic matter. Before planting, prepare the soil by adding compost or well-rotted manure to improve soil fertility and texture.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Watering:</b> Bell peppers require consistent watering to produce healthy fruits. Avoid over-watering or under-watering, as both can affect plant growth and yield. Water deeply but infrequently, and ensure that the soil is evenly moist but not waterlogged.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Fertilization:</b> Bell peppers require adequate nutrients to grow and produce healthy fruits. Use a balanced fertilizer with equal parts nitrogen, phosphorus, and potassium. Avoid over-fertilizing, as this can lead to excessive vegetative growth and poor fruit production.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Pest management:</b> Bell peppers are susceptible to pests such as aphids, thrips, and spidermites. Practice good pest management by monitoring your plants regularly and using natural methods such as companion planting and beneficial insects to control pests. If necessary, use organic pesticides only as a last resort.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Harvesting:</b> Harvest bell peppers when they are mature but still firm and glossy. Leaving them on the plant too long can result in over-ripening and reduced quality. Use sharp shears or a knife to cut the fruit from the plant, taking care not to damage the stem or plant.</li>
+           </ol></p>
+           </div>
+        </div>
+     
+        <div class="preview" data-target="p-2">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Pepper-Bell_Bacterial_Spot.JPG" alt="">
+           <h3>Pepper-Bell_Bacterial_Spot</h3>
+           <div class="scrollable-text">
+           <p ><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Use disease-resistant varieties:</b> Use pepper varieties that are resistant to bacterial spot. Check with your local nursery or seed supplier for recommended varieties that are adapted to your area.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Crop rotation:</b> Rotate your pepper plants with non-related crops to reduce the buildup of the bacteria in the soil.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Practice good sanitation:</b> Remove and destroy all infected plant debris, including fruits and leaves. Do not compost the infected plant material, as the bacteria can survive in compost.</li>   
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Avoid overhead watering:</b> Bacterial spot spreads through water, so avoid overhead watering of your pepper plants. Use a drip irrigation system or a watering can to water your plants at the base.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Practice good hygiene:</b> Wash your hands and gardening tools thoroughly before and after working with your pepper plants to avoid spreading the bacteria.</li>   
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">6.Apply copper-based fungicides:</b> Apply copper-based fungicides as a preventative measure or at the first sign of infection. Follow the label instructions carefully.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">7.Use chemical control:</b> If bacterial spot is severe, you may need to use chemical control methods. Consult with your local agricultural extension office or a licensed professional for recommendations on the best products and application methods.</li>
+           </ol></p>
+        </div>
+        </div>
+     
+        <div class="preview" data-target="p-3">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Potato-Early-Blight.jpg" alt="">
+           <h3>Potato-Early-Blight</h3>
+           <div class="scrollable-text">
+           <p><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Use certified disease-free seed potatoes:</b> Start with certified disease-free seed potatoes to minimize the risk of introducing the pathogen into your garden.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Crop rotation:</b> Rotate your potato crops with non-related crops to reduce the buildup of the pathogen in the soil. Avoid planting potatoes in the same area for at least two years.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Plant resistant varieties:</b> Choose potato varieties that are resistant to early blight. Check with your local nursery or seed supplier for recommended varieties that are adapted to your area.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Practice good sanitation:</b> Remove and destroy all infected plant debris, including leaves, stems, and tubers. Do not compost the infected plant material, as the pathogen can survive in compost.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Control weed hosts:</b> Remove any wild potato plants or other weed hosts that can harbor the pathogen.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">6.Space plants adequately:</b> Plant potato plants with adequate spacing between them to promote air circulation and reduce the risk of the disease spreading.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">7.Avoid overhead watering:</b> Water your potato plants at the base, and avoid overhead watering. Moisture on the leaves can promote the development and spread of the disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">8.Apply fungicides:</b>Apply fungicides preventively or at the first sign of infection. Consult with your local agricultural extension office or a licensed professional for recommendations on the best products and application methods.</li>
+           </ol>
+           </p>
+        </div>
+        </div>
+     
+        <div class="preview" data-target="p-4">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Potato-Healthy.JPG" alt="">
+           <h3>Potato-Healthy</h3>
+           <div class="scrollable-text">
+           <p><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Plant certified disease-free seed potatoes:</b> Start with certified disease-free seed potatoes to minimize the risk of introducing pathogens or pests into your garden.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Rotate potato crops:</b> Rotate potato crops with non-related crops to reduce the buildup of pests and diseases in the soil. Avoid planting potatoes in the same area for at least two years.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Practice good sanitation:</b> Remove and destroy any infected or damaged leaves, stems, or tubers as soon as they are observed. Do not compost the infected plant material, as it can spread disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Control pests:</b> Monitor and control pests that can damage the leaves, such as aphids, Colorado potato beetles, and leafhoppers. Use integrated pest management strategies, such as biological controls, cultural controls, and chemical controls, if necessary.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Water and fertilize appropriately:</b> Water the plants evenly and avoid overwatering, which can lead to root rot and other diseases. Fertilize the plants according to their needs, using a balanced fertilizer that provides the essential nutrients in the correct proportions.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">6.Prune the plants:</b> Prune any damaged, diseased, or dead leaves to promote air circulation and reduce the risk of disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">7.Apply fungicides: </b>Apply fungicides preventively or at the first sign of fungal disease, such as early blight, late blight, or powdery mildew. Consult with your local agricultural extension office or a licensed professional for recommendations on the best products and application methods.</li>
+           </ol>
+           </p>
+        </div>
+        </div>
+        <div class="preview" data-target="p-5">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Potato-Late-Blight.JPG" alt="">
+           <h3>Potato-Late-Blight</h3>
+           <div class="scrollable-text">
+           <p><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Plant resistant varieties:</b> Some potato varieties are resistant to late blight. Planting resistant varieties can help reduce the likelihood of an outbreak.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Crop rotation:</b> Late blight spores can survive in soil and infect new plants the following season. To prevent this, rotate potato crops with other non-solanaceous crops like legumes, corn, or grains.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Remove infected plants:</b> Infected plants should be removed immediately and destroyed to prevent the spread of the disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Avoid overhead watering:</b> Late blight thrives in humid conditions. Overhead watering can increase humidity and encourage the growth of the fungus. Instead, use drip irrigation or water at ground level.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Fungicide application: </b>Apply fungicides preventively or at the first signs of disease to control the spread of late blight. Follow instructions for the specific product used and make sure to apply it evenly and thoroughly.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">6.Monitor weather conditions:</b> Late blight spreads rapidly in warm, humid weather. Monitor weather forecasts and be prepared to take action if conditions are favorable for the disease to develop.</li>
+           </ol>
+           </p>
+        </div>
+        </div>
+        <div class="preview" data-target="p-6">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Toamto-Healthy.JPG" alt="">
+           <h3>Tomato healthy</h3>
+           <div class="scrollable-text">
+           <p><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Plant disease-resistant varieties:</b> Choose tomato varieties that are resistant to common diseases, including leaf diseases. This can greatly reduce the risk of infection and keep your tomato plants healthy.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Space plants properly:</b> Proper spacing can improve air circulation, which helps reduce humidity and prevents the buildup of moisture on leaves. Overcrowded plants create conditions that are conducive to the development of diseases.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Avoid overhead watering:</b> Watering plants from above can increase humidity and cause water droplets to settle on leaves, creating an environment that encourages the growth of fungal spores. Instead, use drip irrigation or water at the base of the plant.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Remove infected leaves:</b> If you notice any signs of disease on tomato leaves, remove them immediately and destroy them to prevent the spread of the disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Apply fungicides preventively:</b> Applying a fungicide before signs of disease appear can help prevent the development of leaf diseases. Follow the instructions on the fungicide product and make sure to apply it evenly and thoroughly.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">6.Monitor the weather:</b> Tomatoes are more susceptible to leaf diseases in warm, humid weather. Keep an eye on weather forecasts and be prepared to take action if necessary.</li>
+           </ol>
+           </p>
+        </div>
+        </div>
+        <div class="preview" data-target="p-7">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Tomato-Bacterial-Spot.JPG" alt="">
+           <h3>Tomato-Bacterial-Spot</h3>
+           <div class="scrollable-text">
+           <p><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Use certified disease-free seeds:</b> Make sure to use certified disease-free seeds when planting tomatoes. This can greatly reduce the risk of bacterial spot infections..</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Space plants properly:</b> Proper spacing can improve air circulation, which helps reduce humidity and prevents the buildup of moisture on leaves. Overcrowded plants create conditions that are conducive to the development of bacterial spots.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Avoid overhead watering:</b> Watering plants from above can increase humidity and cause water droplets to settle on leaves, creating an environment that encourages the growth of bacterial spots. Instead, use drip irrigation or water at the base of the plant.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Rotate crops:</b> Crop rotation is an effective way to prevent the buildup of bacteria in soil. Avoid planting tomatoes or other related plants in the same spot for at least three years.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Remove infected leaves and plants:</b> If you notice any signs of bacterial spots, remove infected leaves or entire plants immediately and destroy them to prevent the spread of the disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">6.Apply copper-based fungicides:</b> Copper-based fungicides can be effective in controlling bacterial spots. Follow the instructions on the fungicide product and make sure to apply it evenly and thoroughly.</li>
+           </ol>
+           </p>
+        </div>
+        </div>
+        <div class="preview" data-target="p-8">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Tomato-Early-Blight.JPG" alt="">
+           <h3>Tomato Early blight</h3>
+           <div class="scrollable-text">
+           <p><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Crop rotation: </b>Avoid planting tomatoes or other related plants in the same spot for at least three years. Crop rotation can help prevent the buildup of fungal spores in soil.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Space plants properly:</b> Proper spacing can improve air circulation, which helps reduce humidity and prevents the buildup of moisture on leaves. Overcrowded plants create conditions that are conducive to the development of early blight.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Avoid overhead watering:</b> Watering plants from above can increase humidity and cause water droplets to settle on leaves, creating an environment that encourages the growth of bacterial spots. Instead, use drip irrigation or water at the base of the plant.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Remove infected leaves:</b> If you notice any signs of early blight, remove infected leaves immediately and destroy them to prevent the spread of the disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Avoid overhead watering:</b> Watering plants from above can increase humidity and cause water droplets to settle on leaves, creating an environment that encourages the growth of fungal spores. Instead, use drip irrigation or water at the base of the plant.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">6.Apply fungicides preventively:</b> Applying a fungicide before signs of disease appear can help prevent the development of early blight. Follow the instructions on the fungicide product and make sure to apply it evenly and thoroughly.</li>
+           </ol>
+           </p>
+        </div>
+        </div>
+        <div class="preview" data-target="p-9">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Tomato-Late-Blight.JPG" alt="">
+           <h3>Tomato Late blight</h3>
+           <div class="scrollable-text">
+           <p><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Use disease-resistant varieties:</b> Choose tomato varieties that are resistant to late blight. This can greatly reduce the risk of infection and keep your tomato plants healthy.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Space plants properly: </b>Proper spacing can improve air circulation, which helps reduce humidity and prevents the buildup of moisture on leaves. Overcrowded plants create conditions that are conducive to the development of late blight.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Remove infected leaves:</b> If you notice any signs of late blight, remove infected leaves immediately and destroy them to prevent the spread of the disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">4.Avoid overhead watering:</b> Watering plants from above can increase humidity and cause water droplets to settle on leaves, creating an environment that encourages the growth of fungal spores. Instead, use drip irrigation or water at the base of the plant.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">5.Apply fungicides preventively:</b> Applying a fungicide before signs of disease appear can help prevent the development of late blight. Follow the instructions on the fungicide product and make sure to apply it evenly and thoroughly.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">6.Harvest ripe tomatoes promptly:</b> Ripe tomatoes should be harvested promptly to prevent them from becoming infected with late blight.</li>
+           </ol>
+           </p>
+        </div>
+        </div>
+        <div class="preview" data-target="p-0">
+           <i class="fas fa-times"></i>
+           <img src="static/image/Tomato-Leaf-Mold.JPG" alt="">
+           <h3>Tomato Leaf Mold</h3>
+           <div class="scrollable-text">
+           <p><ol type="1">
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">1.Remove infected leaves:</b> If you notice any signs of leaf mold, remove infected leaves immediately and destroy them to prevent the spread of the disease.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">2.Improve air circulation:</b> Use fans or open windows and doors to improve air circulation around your tomato plants.</li>
+              <li><b style="color: #333; font-weight: bold;font-size: 0.6cm;">3.Mulch around plants:</b> Mulching around your tomato plants can help prevent the spread of fungal spores from soil to leaves.</li>
+           </ol>
+           </p>
+        </div>
+        </div>
+      <script>
+        let preveiwContainer = document.querySelector('.products-preview');
+let previewBox = preveiwContainer.querySelectorAll('.preview');
+
+document.querySelectorAll('.products-container .product').forEach(product =>{
+  product.onclick = () =>{
+    preveiwContainer.style.display = 'flex';
+    let name = product.getAttribute('data-name');
+    previewBox.forEach(preview =>{
+      let target = preview.getAttribute('data-target');
+      if(name == target){
+        preview.classList.add('active');
+      }
+    });
+  };
+});
+
+previewBox.forEach(close =>{
+  close.querySelector('.fa-times').onclick = () =>{
+    close.classList.remove('active');
+    preveiwContainer.style.display = 'none';
+  };
+});
+        </script>
+   </body>
 </html>
+
